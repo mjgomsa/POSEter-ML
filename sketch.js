@@ -63,23 +63,19 @@ function drawCamera() {
     image(video, 0, 0, width, height);
     pop();
   } else {
-    background("#FB877F");
-
-    // Display the captured thumbnail on the canvas
-    if (capturedImage) {
-      push();
-      translate(width - 150, height - 150);
-      scale(-1, 1);
-      image(capturedImage, -140, 15, 160, 120);
-      pop();
-    }
     posterDone = true;
   }
 }
 
 function drawCompletedPoster() {
-  console.log("stop camera now");
-  video.remove();
+  background("#FB877F");
+  if (capturedImage) {
+    push();
+    translate(width - 150, height - 150);
+    scale(-1, 1);
+    image(capturedImage, -140, 15, 160, 120);
+    pop();
+  }
 }
 
 function drawText() {
