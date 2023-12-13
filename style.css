@@ -1,8 +1,98 @@
-html, body {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: "Telegraf-Bold";
+  src: url(./assets/Telegraf-Bold.otf);
 }
 
-canvas {
-  display: block;
+@font-face {
+  font-family: "Telegraf-Reg";
+  src: url(./assets/Agrandir-Regular.otf);
+}
+
+@font-face {
+  font-family: "Akzidenz";
+  src: url(./assets/akzidenz_light.otf);
+}
+
+h1{
+  color: #000;
+font-family: "Telegraf-Reg";
+font-size: 82px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: left;
+padding-left: 30%;
+}
+
+h2{
+  color: #000;
+font-family: "Akzidenz" ;
+width: 465.617px;
+text-align: left;
+font-size: 22px;
+font-style: normal;
+font-weight: 300;
+line-height: 33px; /* 150% */
+padding-left: 30%;
+}
+
+h3{
+  padding-top: 0px;
+  padding-left: 14%;
+  color: #000;
+font-family: "Telegraf-Reg";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.parentContainer {
+  padding-top: 164.6px;
+  padding-bottom: 130px;
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+.gallery {
+  width: 100%;
+  overflow: hidden; /* Clear the float */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto a new line */
+  justify-content: center; /* Center items horizontally */
+}
+
+.screenshot-item {
+  box-sizing: border-box; /* Include padding and border in the width */
+  width: 500px; /* Set the fixed width of each image */
+  margin-right: 37px; /* Add the gap between items on the right */
+  margin-bottom: 37px; /* Add the gap between items at the bottom */
+}
+
+.screenshot-item img {
+  width: 100%; /* Make the image fill the width of the container */
+  display: block; /* Ensure images don't have extra spacing */
+  margin: auto; /* Center the image within the container */
+}
+
+/* Remove the margin-right from the last item in each row */
+.screenshot-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+
+.leftDiv, .rightDiv {
+  /* Add any styling you want for the child divs */
+  width: 50%;
+  /* height: 500px; */
+  /* border: 1px solid black; */
+}
+
+.phppot-container {
+  text-align: center;
+}
+
+
+.parentContainer{
+
 }

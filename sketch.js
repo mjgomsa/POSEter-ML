@@ -2,10 +2,11 @@ let font;
 let video;
 let poseNet;
 let poses = [];
-// let colorChanged = false;
+let posterDone = false;
 
-word = ["H", "E", "L", "L", "O"];
-posArr = [
+let word = "HELLO";
+
+let posArr = [
   [-10, -10],
   [-10, -10],
   [-10, -10],
@@ -13,17 +14,8 @@ posArr = [
   [-10, -10],
 ];
 
-t = 0;
-capturedImage = null;
-
-// backgroundColor = ['#FB877F', '#74C7B8', '#FDCB82'];
-// textColor = ['#244BD6', '#FFFFFF', '#000000'];
-
-// const colorOptions = [
-//   { background: '#FB877F', text: '#244BD6' },
-//   { background: '#74C7B8', text: '#FFFFFF' },
-//   { background: '#FDCB82', text: '#000000' },
-// ];
+let t = 0;
+let capturedImage = null;
 
 function preload() {
   font = loadFont("assets/Agrandir-TextBold.otf");
@@ -31,30 +23,45 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(720, 560);
+  var canvas = createCanvas(720, 560);
+  canvas.parent("sketch-holder");
+  setupCamera();
+  setupPoseNet();
+}
+
+function setupCamera() {
   video = createCapture(VIDEO);
   video.size(width, height);
-
-  // Create a new poseNet method with a single detection
-  poseNet = ml5.poseNet(video, modelReady);
-  // This sets up an event that fills the global variable "poses"
-  // with an array every time new poses are detected
-  poseNet.on("pose", function (results) {
-    poses = results;
-  });
-  // Hide the video element, and just show the canvas
   video.hide();
 }
 
+function setupPoseNet() {
+  poseNet = ml5.poseNet(video, modelReady);
+  poseNet.on("pose", function (results) {
+    poses = results;
+  });
+}
+
 function modelReady() {
-  select("#status").html(
-    "model loaded ✍🏼✨〜 design your poster with your body〜"
-  );
+  // select("#status").html;
+  // "model loaded ✍🏼✨〜 design your poster with your body〜"();
 }
 
 function draw() {
+  if (!posterDone) {
+    drawCamera();
+  } else {
+    drawCompletedPoster();
+  }
+
+  drawText();
+}
+
+function drawCamera() {
   // flipping the camera horizontally
-  if (t < 5) {
+  t = floor(millis() / 3000);
+
+  if (t < word.length) {
     push();
     translate(width, 0);
     scale(-1, 1);
@@ -71,8 +78,16 @@ function draw() {
       image(capturedImage, -140, 15, 160, 120);
       pop();
     }
+    posterDone = true;
   }
+}
 
+function drawCompletedPoster() {
+  console.log("stop camera now");
+  video.remove();
+}
+
+function drawText() {
   // type change
   textSize(250);
   textFont(font);
@@ -95,8 +110,18 @@ function draw() {
     }
 
     // Display the text
-    for (j = 0; j < 5; j++) {
-      text(word[j], posArr[j][0], posArr[j][1]);
+    for (j = 0; j < word.length; j++) {
+      if (j < word.length) {
+        // Check if the index is within the length of the word
+        text(word[j], posArr[j][0], posArr[j][1]);
+      }
     }
   }
+}
+
+function updateSketch() {
+  // Get the input value from the HTML element
+  word = document.getElementById("inputValue").value;
+  // Redraw the canvas with the updated value
+  redraw();
 }
