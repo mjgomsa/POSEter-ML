@@ -88,11 +88,71 @@ line-height: normal;
   /* border: 1px solid black; */
 }
 
-.phppot-container {
-  text-align: center;
+
+.inputCont {
+  display: block;
+  width: 465.617px;
+  margin-left: 30%;
 }
 
+.row {
+  display: block;
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin-bottom: 10px;
+}
 
-.parentContainer{
+.row:first-child {
+  width: 100%;
+}
 
+.row:nth-child(2) {
+  display: inline-block; /* Display the second row as inline-block */
+}
+
+.row:nth-child(2) input,
+.row:nth-child(2) button {
+  float: left;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+label {
+  color: #000;
+font-family: "Akzidenz";
+font-size: 22px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+input {
+  width: 70%;
+  color: #7E7E7E;
+font-family: "Akzidenz";
+font-size: 18px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+border: 1px solid black;
+background: none;
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 9px;
+padding-bottom: 9px;
+}
+
+.addButton {
+  margin-left: 8px;
+  color: #000;
+font-family: "Telegraf-Bold";
+font-size: 22px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+border: 1px solid black;
+background: none;
+padding-left: 32px;
+padding-right: 32px;
+padding-top: 9px;
+padding-bottom: 9px;
 }

@@ -29,9 +29,15 @@
             your style. You have three seconds to place each character. Capture
             your final poster to add it to our gallery :)
           </h2>
-          <label for="inputValue">Enter a word:</label>
-          <input type="text" id="inputValue" placeholder="Type something" />
-          <button onclick="updateSketch()">Update Word</button>
+          <div class="inputCont">
+            <div class="row">
+              <label for="inputValue">Input text (max 10 characters)</label>
+            </div>
+            <div class="row">
+              <input type="text" id="inputValue" placeholder="HELLO" />
+              <button class="addButton" onclick="updateSketch()">add</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="rightDiv">
