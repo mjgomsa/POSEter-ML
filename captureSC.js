@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to capture screenshot using html2canvas
   function captureScreenshot() {
-    localStorage.clear();
     html2canvas(document.getElementById("defaultCanvas0")).then(function (
       canvas
     ) {
