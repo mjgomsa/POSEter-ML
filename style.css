@@ -13,6 +13,26 @@
   src: url(./assets/akzidenz_light.otf);
 }
 
+@font-face {
+  font-family: "Agrandir";
+  src: url(./assets/Agrandir-Regular.otf);
+}
+@font-face {
+  font-family: "Clarendon";
+  src: url(./assets/ClarendonLTStd.otf);
+}
+
+@font-face {
+  font-family: "DMMono";
+  src: url(./assets/DMMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Ogg";
+  src: url(./assets/Ogg-Roman.otf);
+}
+
+
 h1{
   color: #000;
 font-family: "Telegraf-Reg";
@@ -21,7 +41,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 text-align: left;
-padding-left: 30%;
+/* padding-left: 30%; */
 }
 
 h2{
@@ -33,12 +53,12 @@ font-size: 22px;
 font-style: normal;
 font-weight: 300;
 line-height: 33px; /* 150% */
-padding-left: 30%;
+/* padding-left: 30%; */
 }
 
 h3{
   padding-top: 0px;
-  padding-left: 14%;
+  padding-left: 105px;
   color: #000;
 font-family: "Telegraf-Reg";
 font-size: 32px;
@@ -49,7 +69,7 @@ line-height: normal;
 
 .parentContainer {
   padding-top: 164.6px;
-  padding-bottom: 130px;
+  padding-bottom: 80px;
   display: flex;
   border-bottom: 2px solid black;
 }
@@ -80,6 +100,14 @@ line-height: normal;
   margin-right: 0;
 }
 
+.leftDiv {
+  /* background-color: red; */
+  padding-left: 105px;
+}
+
+.rightDiv{
+  /* background-color: blue; */
+}
 
 .leftDiv, .rightDiv {
   /* Add any styling you want for the child divs */
@@ -141,8 +169,8 @@ padding-top: 9px;
 padding-bottom: 9px;
 }
 
-.addButton {
-  margin-left: 8px;
+.applyButton {
+  /* margin-left: 8px; */
   color: #000;
 font-family: "Telegraf-Bold";
 font-size: 22px;
@@ -155,4 +183,122 @@ padding-left: 32px;
 padding-right: 32px;
 padding-top: 9px;
 padding-bottom: 9px;
+cursor: pointer;
+}
+
+.row {
+  display: flex;
+  /* justify-content: space-between; Adjust as needed */
+}
+
+.row2 {
+  display: flex;
+  /* background-color: yellow; */
+  display: flex;  
+  justify-content: flex-end;
+  margin-right: 137px;
+}
+
+.row2Button{
+  color: #000;
+font-family: "Telegraf-Bold";
+font-size: 22px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+border: 1px solid black;
+background: none;
+padding-left: 32px;
+padding-right: 32px;
+padding-top: 9px;
+padding-bottom: 9px;
+margin-left:22px;
+cursor: pointer;
+}
+
+.row2Button:hover, .applyButton:hover{
+  /* background-color:  #EBEBEB;; */
+  opacity: 0.7;
+}
+
+
+/* Hover effect for the button selects */
+.buttonSelect:hover {
+  opacity: 0.8;
+}
+
+/* Style the selected button with a black border */
+.buttonSelect.selected {
+  border: 2px solid black;
+}
+
+.buttonSelect {
+  width: 65.817px;
+  height: 65.817px;
+  background: none;
+  margin-right: 18px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.styleButton.selected {
+  border-color: black;
+}
+
+#style1 {
+  background: #FB877F;
+  color: #244BD6;
+  font-family: "Agrandir";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  vertical-align:middle; 
+}
+
+#style1 p {
+  vertical-align:baseline; 
+  margin-top: 60px;
+}
+
+#style2 p {
+  /* line-height: 100px; Adjust to center vertically */
+  vertical-align:baseline; /* Adjust the vertical alignment */
+  margin-top: 75px;
+}
+#style2 {
+  background: #FFD39E;
+  color: #F12C11;
+  font-family: "Clarendon";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 65.817px; /* Adjust to center vertically */
+  vertical-align: middle; /* Adjust the vertical alignment */
+}
+
+#style3 {
+  background: #A8E6F9;
+  color: #000;
+  font-family: "DMMono";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 65.817px; /* Adjust to center vertically */
+}
+
+#style4 {
+  background: #F8EFFE;
+  color: #000;
+  font-family: "Ogg";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 65.817px; /* Adjust to center vertically */
+}
+
+.styleButton {
+  border: 2px solid transparent;
 }
