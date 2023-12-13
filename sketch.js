@@ -70,14 +70,27 @@ function drawCamera() {
   } else {
     background("#FB877F");
 
+    // Create an image and draw the video onto it
+    capturedImage = createImage(width, height);
+    capturedImage.copy(
+      video,
+      0,
+      0,
+      video.width,
+      video.height,
+      0,
+      0,
+      width,
+      height
+    );
+
     // Display the captured thumbnail on the canvas
-    if (capturedImage) {
-      push();
-      translate(width - 150, height - 150);
-      scale(-1, 1);
-      image(capturedImage, -140, 15, 160, 120);
-      pop();
-    }
+    push();
+    translate(width - 150, height - 150);
+    scale(-1, 1);
+    image(capturedImage, -140, 15, 160, 120);
+    pop();
+
     posterDone = true;
   }
 }
